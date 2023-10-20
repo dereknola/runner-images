@@ -15,9 +15,7 @@ for package in $cask_packages; do
     echo "Installing $package..."
     if [[ $package == "virtualbox" ]]; then
         if ! is_Ventura || ! is_VenturaArm64; then
-            # VirtualBox 7 crashes
-            # macOS host: Dropped all kernel extensions. VirtualBox relies fully on the hypervisor and vmnet frameworks provided by Apple now.
-            vbcask_url="https://raw.githubusercontent.com/Homebrew/homebrew-cask/aa3c55951fc9d687acce43e5c0338f42c1ddff7b/Casks/virtualbox.rb"
+            vbcask_url="https://raw.githubusercontent.com/Homebrew/homebrew-cask/b79a8cb2a83aca900e8f65fda7dce753505001ab/Casks/v/virtualbox.rb"
             download_with_retries $vbcask_url
             brew install ./virtualbox.rb
             rm ./virtualbox.rb
